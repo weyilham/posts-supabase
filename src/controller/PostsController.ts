@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+import prisma from "../../lib/prisma";
 import { PostType } from "@/types/PostType";
 
 export async function getPost(): Promise<PostType[]> {
