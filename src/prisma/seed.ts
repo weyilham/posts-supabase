@@ -39,6 +39,14 @@ export async function main() {
   for (const u of userData) {
     await prisma.user.create({ data: u });
   }
+  console.log("Seeding completed");
 }
 
-main();
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(() => {
+    prisma.$disconnect();
+  });
